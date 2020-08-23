@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<meta charset="UTF-8">
+<title>查询页面</title>
+</head>
+<body>
+<form align="center">
+<input type="text" name="name">
+<input type="submit" value="查询">
+</form>
+<table border="1" align="center" width="80%">
+
+
+    <tr>
+        <td>序号</td>
+        <td>店铺名</td>
+        <td>状态</td>
+        <td>宽带状态</td>
+        <td>是否撤店</td>
+        
+        <td>操作</td>
+    </tr>
+    <tr th:each="user:${userList}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.age}"></td>
+         <td th:text="${user.names}"></td>
+         <td th:text="${user.whether}"></td>
+        <td>
+            <a th:href="@{/getUserById(id=${user.id})}">修改</a>
+            <a th:href="@{/deleteUserById(id=${user.id})}">删除</a>
+             <a th:href="@{/input}">添加</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

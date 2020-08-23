@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script th:inline="javascript">
+    var openid=[[${openid}]];
+ 
+     var url="/userlist";
+    setTimeout('location.href=url', 1000);
+</script>
+</head>
+<body>
+<strong></strong><a  class="alert-link">添加成功1s后将自动跳转</a>
+
+</body>
+</html>

@@ -43,5 +43,20 @@ public class UserController {
 	public String getoinput() {
 		return "input";
 	}
+	
+	@RequestMapping(value = "/getUserById")
+	public String getUseryById(Integer id,Model model) {
+		User user = this.userService.getUserById(id);
+		model.addAttribute("user", user);	
+		return "updateUser";
+		
+	}
+	@RequestMapping(value = "/editUser")
+	public String editUser(User user) {
+		user.getId();
+		this.userService.updateUser(user);
+		return "ok2";
+		
+	}
 
 }

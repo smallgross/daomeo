@@ -24,12 +24,12 @@ IprovinceService pService;
 
 
 
-@RequestMapping("/")
+@RequestMapping(value = "/")
 public String index() {
 	return"index";
 }
 
-	@RequestMapping("/getdata")
+	@RequestMapping(value = "/getdata")
 	@ResponseBody
 	public List<Province> showData() {
 		List<Province> arrayList = new ArrayList<>();

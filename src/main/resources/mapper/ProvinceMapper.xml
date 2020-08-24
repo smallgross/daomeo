@@ -6,7 +6,6 @@
 
 	<resultMap type="com.dao.daomeo.entity.Province"
 		id="BaseResultMap">
-
 		<result column="name" jdbcType="VARCHAR" property="name" />
 		<result column="nums" jdbcType="INTEGER" property="nums" />
 	</resultMap>

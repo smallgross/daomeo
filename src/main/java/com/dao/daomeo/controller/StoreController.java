@@ -8,13 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.dao.daomeo.entity.User;
-import com.dao.daomeo.service.UserService;
+import com.dao.daomeo.entity.Store;
+import com.dao.daomeo.service.StoreserService;
 
 @Controller
-public class UserController {
+public class StoreController {
 	@Autowired
-	private UserService userService;
+	private StoreserService userService;
 	
 	
 	@RequestMapping(value = "/inputPage")
@@ -25,7 +25,7 @@ public class UserController {
 	
 	//提交
 	@RequestMapping(value = "/saveUser")
-	public String userPage(User user) {
+	public String userPage(Store user) {
 		this.userService.insertUser(user);
 		return "ok";
 	}
@@ -35,7 +35,7 @@ public class UserController {
 	 */
 	@RequestMapping(value = "/userlist")
 	public String userlist(Model model) {
-		List<User> userList = this.userService.selectUserList();
+		List<Store> userList = this.userService.selectUserList();
 		model.addAttribute("userList", userList);
 		return "userList";
 	}
@@ -52,7 +52,7 @@ public class UserController {
 	 */
 	@RequestMapping(value = "/getUserById")
 	public String getUseryById(Integer id,Model model) {
-		User user = this.userService.getUserById(id);
+		Store user = this.userService.getUserById(id);
 		model.addAttribute("user", user);	
 		return "updateUser";
 		
@@ -63,7 +63,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value = "/editUser")
-	public String editUser(User user) {
+	public String editUser(Store user) {
 		user.getId();
 		this.userService.updateUser(user);
 		return "ok2";

@@ -2,22 +2,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
         
- <mapper namespace="com.dao.daomeo.dao.UserMapper">
- <!-- 增加 -->
- 	<insert id="insertUser" parameterType="User">
- 	 INSERT INTO user(name,age,names,whether)VALUES(#{name},#{age},#{names},#{whether});
- 	</insert>
- <!--查询用户列表信息-->
-    <select id="selectUserList" resultType="User">
-        select * from user;
-    </select>
- <!--根据用户id查询出当前对象-->
- 	<select id="getUserById" parameterType="int" resultType="User">
- 	select*from user where id=#{id};
- 	
- 	</select>
- 	<!--修改用户信息  根据id-->
- 	<update id="updateUser" parameterType="User">
- 	update user set name=#{name},age=#{age},names=#{names},whether=#{whether} where id=#{id};
- 	</update>
- </mapper>
+<mapper>
+
+
+
+
+</mapper>

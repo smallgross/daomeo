@@ -1,13 +1,11 @@
-package com.dao.daomeo.dao;
+package com.dao.daomeo.service;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Mapper;
-
 import com.dao.daomeo.entity.User;
+import com.dao.daomeo.result.Result;
 
-@Mapper
-public interface UserMapper {
+public interface UserServerice {
 	/**
 	 * 增加
 	 * @param user
@@ -17,7 +15,7 @@ public interface UserMapper {
 	 * 查询
 	 * @return
 	 */
-	List<User>seleByIdUserList();
+	Result<User> seleByIdUserList();
 	/**
 	 * 根据id查询
 	 * @param user

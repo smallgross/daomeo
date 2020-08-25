@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.dao.daomeo.dao.UserMapper;
 import com.dao.daomeo.entity.User;
 import com.dao.daomeo.service.UserService;
@@ -36,6 +35,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public void updateUser(User user) {
+		
 		this.userMapper.updateUser(user);
 		
 	}

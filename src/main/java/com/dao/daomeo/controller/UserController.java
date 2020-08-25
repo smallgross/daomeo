@@ -31,7 +31,7 @@ public class UserController {
 	}
 	
 	/**
-	 * 查询
+	 * 查询所有列表
 	 */
 	@RequestMapping(value = "/userlist")
 	public String userlist(Model model) {
@@ -44,6 +44,12 @@ public class UserController {
 		return "input";
 	}
 	
+	/**
+	 * 根据id查询修改 的内容
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/getUserById")
 	public String getUseryById(Integer id,Model model) {
 		User user = this.userService.getUserById(id);
@@ -51,6 +57,11 @@ public class UserController {
 		return "updateUser";
 		
 	}
+	/**
+	 * 修改完后并且提交
+	 * @param user
+	 * @return
+	 */
 	@RequestMapping(value = "/editUser")
 	public String editUser(User user) {
 		user.getId();

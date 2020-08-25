@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>修改页面</title>
+</head>
+<body>
+	<form th:action="@{/editUser}"method="post">
+		<input type="hidden" name="id" th:field="${user.id}"> 
+		店铺名:<input type="text" name="name" th:field="${user.name}"><br />
+		状态:<input type="text" name="age" th:field="${user.age}"><br />
+		 宽带状态<input type="text" name="names" th:field="${user.names}"><br />
+		是否撤店<input type="text"name="whether" th:field="${user.whether}"><br />
+	<input type="submit" value="提交">
+	</form>
+
+</body>
+</html>

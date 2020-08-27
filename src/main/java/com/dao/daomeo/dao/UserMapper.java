@@ -1,39 +1,34 @@
 package com.dao.daomeo.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import com.dao.daomeo.entity.User;
 
 @Mapper
 public interface UserMapper {
-	/**
-	 * 增加
-	 * @param user
-	 */
-	void insertUser(User user);
+
 	/**
 	 * 查询
 	 * @return
 	 */
-	List<User>seleByIdUserList();
-	/**
-	 * 根据id查询
-	 * @param user
-	 * @return
-	 */
+	@Select("select *from user where username=#{username}and password=#{password}")
+	List<Map<String, Object>>query(@Param("username")String username,@Param("password")String password);
 	
-	User getUserById(Integer id);
+	
 	
 	/**
-	 * 修改
+	 * 注册
 	 */
-	void updateUser(User user);
+	@Select("insert into user(username,password)values(#{username},#{password})")
+	public List<Map<String, Object>>add(@Param("username")String username,@Param("password")String password);
+
 	
-	/**
-	 * 删除
-	 */
-	void delteUserById(Integer id);
+	
+	//https://www.cnblogs.com/s313139232/p/10549601.html实例
 	
 }

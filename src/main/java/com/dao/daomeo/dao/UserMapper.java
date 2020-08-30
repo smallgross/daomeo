@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
-import com.dao.daomeo.entity.User;
+
 
 @Mapper
 public interface UserMapper {

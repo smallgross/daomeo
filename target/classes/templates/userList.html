@@ -7,7 +7,9 @@
 <form align="center">
 <input type="text" name="name">
 <input type="submit" value="查询">
+<a href="/index">图形化</a>
 </form>
+
 <table border="1" align="center" width="80%">
 
 
@@ -17,7 +19,6 @@
         <td>状态</td>
         <td>宽带状态</td>
         <td>是否撤店</td>
-        
         <td>操作</td>
     </tr>
     <tr th:each="user:${userList}">
@@ -27,8 +28,7 @@
          <td th:text="${user.names}"></td>
          <td th:text="${user.whether}"></td>
         <td>
-            <a th:href="@{/getUserById(id=${user.id})}">修改</a>
-           
+            <a th:href="@{/getUserById(id=${user.id})}">修改</a>   
              <a th:href="@{/input}">添加</a>
         </td>
     </tr>

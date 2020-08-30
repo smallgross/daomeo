@@ -19,5 +19,8 @@ public class UserServerice {
 		return userMapp.query(username, password);
 		
 	}
-	
+	public List<Map<String, Object>>add(String username,String password){
+		return userMapp.add(username, password);
+		
+	}
 }

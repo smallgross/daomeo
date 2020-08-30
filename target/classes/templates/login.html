@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>登录</title>
+
+</head>
+<script src="/static/jquery-3.4.1.min.js"></script>
+<script>
+function login() {
+    $.ajax({
+        url: '/loginsuc',
+        type: 'post',
+        dataType: 'text',
+        data: {"username": $('#username').val(), "password": $('#password').val()},
+     
+        success: function (dada) {
+     
+           if (dada ==="success") {
+        	     
+                window.location.href='/userlist';
+            } else {
+            	
+            	window.location.href='/show2';
+        }
+        }
+        
+    })
+}
+</script>
+<body>
+	<p>请输入用户和密码</p>
+	<form>
+		<table>
+			<tr>
+				<td>用户名：</td>
+				<td><input type="text" id="username"></td>
+			</tr>
+
+			<tr>
+				<td>密码：</td>
+				<td><input type="password" id="password"></td>
+			</tr>
+			<tr>
+                     <td colspan="2">
+                         <input type="button" onclick="login()" value="登陆">
+                    </td>
+                 </tr>
+		</table>
+
+	</form>
+</body>
+</html>

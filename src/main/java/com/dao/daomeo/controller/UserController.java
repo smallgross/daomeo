@@ -46,4 +46,9 @@ public class UserController {
 		return "show2";
 		
 	}
+	@RequestMapping(value = "/inde")
+	public String index() {
+		return "inde";
+		
+	}
 }

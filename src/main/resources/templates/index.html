@@ -23,9 +23,9 @@
 </head>
 <body>
 <h1 class="aa">全国分布可视化系统</h1>
-  <div id="main" style="width: 400px;height:400px;position:absolute;top:100px"></div>
+  <div id="main" style="width: 400px;height:400px;position:absolute;top:100px; left: 143px"></div>
 
-  <div id="main3" style="width: 500px;height:400px;position:absolute;top:100px;left:1050px"></div>
+ 
   <script type="text/javascript">
   // 基于准备好的dom，初始化echarts实例
  var myCahrt= echarts.init(document.getElementById('main'));
@@ -79,9 +79,9 @@ var option={
  // 使用刚指定的配置项和数据显示图表。
     myCahrt.setOption(option);
   
-      var myChart2 = echarts.init(document.getElementById('main3'));
+    //  var myChart2 = echarts.init(document.getElementById('main3'));
   
-      var option2 = {
+     /* var option2 = {
          title : {
               text: '全国分布情况',
               subtext: '',
@@ -191,7 +191,7 @@ var option={
         ]
     };
      myChart3.setOption(option);
-	 
+	 -->*/
   </script>
 </body>
 </html>

@@ -6,30 +6,16 @@
 
 </head>
 <script src="/static/jquery-3.4.1.min.js"></script>
-<script>
-function login() {
-    $.ajax({
-        url: '/loginsuc',
-        type: 'post',
-        dataType: 'text',
-        data: {"username": $('#username').val(), "password": $('#password').val()},
-     
-        success: function (dada) {
-     
-           if (dada ==="success") {
-        	     
-                window.location.href='/userlist';
-            } else {
-            	
-            	window.location.href='/show2';
-        }
-        }
-        
-    })
-}
+<script src="/static/ajax.js"></script>
+<script >
+
 </script>
-<body>
-	<p>请输入用户和密码</p>
+<body >
+<div align="center" class="dae" style="position: fixed;
+  top: 30%;bottom: 0;left: 0;right: 0;margin: auto;">
+
+
+<p>请输入用户和密码</p>
 	<form>
 		<table>
 			<tr>
@@ -42,13 +28,12 @@ function login() {
 				<td><input type="password" id="password"></td>
 			</tr>
 			<tr>
-                     <td colspan="2">
-                         <input type="button" onclick="login()" value="登陆">
-                         <input type="button" onclick="" value="注册">
-                    </td>
-                 </tr>
+				<td colspan="2"><input type="button" onclick="login()"
+					value="登录 "></td>
+			</tr>
 		</table>
 
-	</form>
+	</form></div>
+	
 </body>
 </html>

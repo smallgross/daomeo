@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import com.dao.daomeo.entity.User;
+
 
 
 @Mapper
@@ -17,7 +19,7 @@ public interface UserMapper {
 	 * @return
 	 */
 	@Select("select *from user where username=#{username}and password=#{password}")
-	List<Map<String, Object>>query(@Param("username")String username,@Param("password")String password);
+	User query(@Param("username")String username,@Param("password")String password);
 	
 	
 	

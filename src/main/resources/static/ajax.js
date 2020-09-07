@@ -2,19 +2,24 @@ function login() {
     $.ajax({
         url: '/loginsuc',
         type: 'post',
-        dataType: 'text',
+        async:true,
+        cache:false,
         data: {"username": $('#username').val(), "password": $('#password').val()},
      
-        success: function (dada) {
+        success: function (result) {
      
-           if (dada ==="success") {
+           if (result) {
         	     
-                window.location.href='/userlist';
+               console.log('true');
+               $(location).attr('href','/userlist');
+               $.cookie('username',result.username, { expires: 7 });
+               $.cookie('password',result.password, { expires: 7 });
             } else {
             	
-            	window.location.href='/show2';
+             alert("用户名或密码错误");
+              return false;
         }
         }
         
-    })
+    });
 }

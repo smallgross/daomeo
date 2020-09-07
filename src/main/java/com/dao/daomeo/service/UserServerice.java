@@ -5,17 +5,18 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.dao.daomeo.dao.UserMapper;
 import com.dao.daomeo.entity.User;
 import com.dao.daomeo.result.Result;
-@Component
+@Service
 public class UserServerice {
 	
 	@Autowired
 	UserMapper userMapp;
 	
-	public List<Map<String , Object>>query(String username,String password){
+	public User query(String username,String password){
 		return userMapp.query(username, password);
 		
 	}
